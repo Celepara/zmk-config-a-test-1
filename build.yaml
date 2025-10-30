@@ -1,5 +1,4 @@
 ---
 include:
   - board: rpi_pico
-    shield: TopSecret
- 
+    shield: tc36k 
