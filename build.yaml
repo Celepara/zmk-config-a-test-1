@@ -1,0 +1,5 @@
+---
+include:
+  - board: raspberrypi
+    shield: zmk-keyboard-graph-theory
+ 
