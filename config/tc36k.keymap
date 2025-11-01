@@ -10,11 +10,6 @@
             key-positions = <20 21 30>;
             slow-release;
         };
-
-        Unlock {
-            bindings = <&studio_unlock>;
-            key-positions = <0>;
-        };
     };
 
     keymap {
