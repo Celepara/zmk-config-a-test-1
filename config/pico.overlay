@@ -1,0 +1,30 @@
+// config/pico.overlay
+
+/ {
+    chosen {
+        zmk,kscan = &kscan_0;
+        zmk,matrix = &matrix_0;
+    };
+
+    behaviors {
+        // Define a behavior that turns off a status LED after a delay
+        led_off: led_off_behavior {
+            compatible = "zmk,behavior-output-status";
+            label = "LED_OFF";
+            
+            // Turn the LED OFF
+            output-state = <0>; 
+            
+            // Set the trigger to be 5000ms (5 seconds) after device power-on
+            trigger-delay-ms = <5000>;
+        };
+    };
+};
+
+// Target the Pi Pico's LED node
+&pico_led {
+    status = "okay";
+    
+    // Assign the defined 'led_off' behavior to this LED
+    turn-off-behavior = <&led_off>;
+};
